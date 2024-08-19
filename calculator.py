@@ -76,7 +76,4 @@ button_equal = tk.Button(root,text="=",command=(evaluate_calculation),width=11)
 button_equal.grid(row=6,column=3)
 
 
-
-
-
 tk.mainloop()
