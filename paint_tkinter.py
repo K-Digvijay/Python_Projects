@@ -44,4 +44,10 @@ def reset(event):
 canvas.bind("<B1-Motion>", paint)
 canvas.bind("<ButtonRelease-1>", reset)
 
+
+
+
+
+
+
 root.mainloop()
