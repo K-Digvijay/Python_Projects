@@ -76,12 +76,16 @@ def predict_species():
     except ValueError:
         messagebox.showerror("Warning","Enter the value")
 
+def reset():
+    pass
+
 
 login_button = tk.Button(text="Predict",command=predict_species)
 login_button.pack()
 info = tk.Label(text="Enter number: 1,2,3,4,5",background='skyblue')
 info.pack(pady=20)
-
+reset_button = tk.Button(text="Reset",command=reset)
+reset_button.pack()
 
 
 

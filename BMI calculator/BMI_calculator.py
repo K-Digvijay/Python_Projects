@@ -21,11 +21,11 @@ top_image.place(x=-10,y=-10)
 Label(root,width=72,height=18,bg='lightblue').pack(side=BOTTOM)
 
 
-box = PhotoImage(file=r"BMI calculator\\box.png")
+box = PhotoImage(file=r"D:\TinkerForm\BMI calculator\box.png")
 Label(root,image=box).place(x=20,y=100)
 Label(root,image=box).place(x=240,y=100)
 
-scale = PhotoImage(file=r"BMI calculator\scale.png")
+scale = PhotoImage(file=r"D:\TinkerForm\BMI calculator\scale.png")
 Label(root,image=scale,bg="lightblue").place(x=20,y=310)
 
 
