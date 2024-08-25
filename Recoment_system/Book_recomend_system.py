@@ -16,16 +16,25 @@ def fetch_information(title,poster,date,rating):
     global inc
     inc = inc+1
     text[f'a{inc}'].config(text=title)
-    if poster !='N/A':
-        response = requests.get(poster)
-        img_data = response.content
-        img = Image.open(BytesIO(img_data))
-        resized_image = img.resize((140,200))
-        photo2 = ImageTk.PhotoImage(resized_image)
-        image[f'b{inc}'].config(image=photo2)
-        image[f'b{inc}'].image=photo2
+    if check_var.get():
+        text2[f'a{inc}'].config(text=date)
     else:
-        image[f'b{inc}'].config(text="No change")
+        text2[f'a{inc}'].config(text="")
+
+    if check_var1.get():
+        text3[f'a{inc}'].config(text=rating)
+    else:
+        text3[f'a{inc}'].config(text="")
+    
+    response = requests.get(poster)
+    img_data = response.content
+    img = Image.open(BytesIO(img_data))
+    resized_image = img.resize((140,200))
+    photo2 = ImageTk.PhotoImage(resized_image)
+    image[f'b{inc}'].config(image=photo2)
+    image[f'b{inc}'].image=photo2
+    
+    #image[f'b{inc}'].config(text="No change")
 
 
 
@@ -52,21 +61,21 @@ def search_menu():
                 published_data = volume_info.get('publishedDate','N/A')
                 author= volume_info.get('authors',['N/A'])
                 rating = volume_info.get('averageRating',['N/A'])
-                image_links = volume_info.get('imageLink',{})
+                image_links = volume_info.get('imageLinks',{})
                 image = image_links.get('thumbnail','N/A')
                
 
                 fetch_information(title,image,published_data,rating)
 
 
-                print(title)
+                '''print(title)
                 print(publisher)
                 print(published_data)
                 print(author)
                 print(rating)
-                print(image)
+                print(image)'''
 
-                #fetch_information(title,publisher,published_data,author,rating,image)
+                
 
                 if check_var.get() or check_var1.get():
                     frame11.place(x=160,y=600)
@@ -170,10 +179,10 @@ text['a5'].place(x=10,y=2)
 
 
 image = {'b1':Label(frame1),
-         'b2':Label(frame1),
-         'b3':Label(frame1),
-         'b4':Label(frame1),
-         'b5':Label(frame1)}
+         'b2':Label(frame2),
+         'b3':Label(frame3),
+         'b4':Label(frame4),
+         'b5':Label(frame5)}
 image['b1'].place(x=3,y=30)
 image['b2'].place(x=3,y=30)
 image['b3'].place(x=3,y=30)
@@ -199,28 +208,28 @@ frame51 = Frame(root,width=150,height=50,bg='#6e6e6e')
 
 #publish date
 
-text2 = {'a11':Label(frame11,fg='red',text='Date',font=('arial',10),bg='#6e6e6e'),
-         'a21':Label(frame21,fg='red',text='Date',font=('arial',10),bg='#6e6e6e'),
-         'a31':Label(frame31,fg='red',text='Date',font=('arial',10),bg='#6e6e6e'),
-         'a41':Label(frame41,fg='red',text='Date',font=('arial',10),bg='#6e6e6e'),
-         'a51':Label(frame51,fg='red',text='Date',font=('arial',10),bg='#6e6e6e')}
-text2['a11'].place(x=20,y=2)
-text2['a21'].place(x=20,y=2)
-text2['a31'].place(x=20,y=2)
-text2['a41'].place(x=20,y=2)
-text2['a51'].place(x=20,y=2)
+text2 = {'a1':Label(frame11,fg='red',text='Date',font=('arial',10),bg='#6e6e6e'),
+         'a2':Label(frame21,fg='red',text='Date',font=('arial',10),bg='#6e6e6e'),
+         'a3':Label(frame31,fg='red',text='Date',font=('arial',10),bg='#6e6e6e'),
+         'a4':Label(frame41,fg='red',text='Date',font=('arial',10),bg='#6e6e6e'),
+         'a5':Label(frame51,fg='red',text='Date',font=('arial',10),bg='#6e6e6e')}
+text2['a1'].place(x=20,y=2)
+text2['a2'].place(x=20,y=2)
+text2['a3'].place(x=20,y=2)
+text2['a4'].place(x=20,y=2)
+text2['a5'].place(x=20,y=2)
 
 #rating
-text3 = {'a11':Label(frame11,text='Rating',font=('arial',10),bg='#6e6e6e'),
-         'a21':Label(frame21,text='Rating',font=('arial',10),bg='#6e6e6e'),
-         'a31':Label(frame31,text='Rating',font=('arial',10),bg='#6e6e6e'),
-         'a41':Label(frame41,text='Rating',font=('arial',10),bg='#6e6e6e'),
-         'a51':Label(frame51,text='Rating',font=('arial',10),bg='#6e6e6e')}
-text3['a11'].place(x=20,y=30)
-text3['a21'].place(x=20,y=30)
-text3['a31'].place(x=20,y=30)
-text3['a41'].place(x=20,y=30)
-text3['a51'].place(x=20,y=30)
+text3 = {'a1':Label(frame11,text='Rating',font=('arial',10),bg='#6e6e6e'),
+         'a2':Label(frame21,text='Rating',font=('arial',10),bg='#6e6e6e'),
+         'a3':Label(frame31,text='Rating',font=('arial',10),bg='#6e6e6e'),
+         'a4':Label(frame41,text='Rating',font=('arial',10),bg='#6e6e6e'),
+         'a5':Label(frame51,text='Rating',font=('arial',10),bg='#6e6e6e')}
+text3['a1'].place(x=20,y=30)
+text3['a2'].place(x=20,y=30)
+text3['a3'].place(x=20,y=30)
+text3['a4'].place(x=20,y=30)
+text3['a5'].place(x=20,y=30)
 
 
 
