@@ -9,10 +9,6 @@ root.geometry("470x580+300+200")
 root.resizable(False,False)
 root.configure(bg="#f0f1f5")
 
-#icon
-image_icon = PhotoImage(file=r"D:\TinkerForm\BMI calculator\icon.png")
-root.iconphoto(False,image_icon)
-
 
 top = PhotoImage(file=r"D:\TinkerForm\BMI calculator\\top.png")
 top_image = Label(root,image=top,background="#f0f1f5")
