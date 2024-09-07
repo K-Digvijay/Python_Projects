@@ -35,7 +35,6 @@ Note : root.mainloop() will remain at the last for looping your code
   
   Label(root,width=72,height=18,bg='lightblue').pack(side=BOTTOM)
   
-  
   box = PhotoImage(file=r"D:\TinkerForm\BMI calculator\box.png")
   Label(root,image=box).place(x=20,y=100)
   Label(root,image=box).place(x=240,y=100)
@@ -46,28 +45,29 @@ Note : root.mainloop() will remain at the last for looping your code
 
 - Lets add the slider for the weight and height
 - slider 1
+
   ``` python
   current_value  =DoubleVar()
-
-def get_current_value():
-    return "{: .2f}".format(current_value.get())
-
-def slider_changed(event=None):
-    Height.set(get_current_value())
-
-style = ttk.Style()
-style.configure("TScale",background='white')
-
-slider = ttk.Scale(root,from_=0,to=220,orient='horizontal',style='TScale',
-                   command=slider_changed,variable=current_value)
-slider.place(x=80,y=250)
+  
+  def get_current_value():
+      return "{: .2f}".format(current_value.get())
+  
+  def slider_changed(event=None):
+      Height.set(get_current_value())
+  
+  style = ttk.Style()
+  style.configure("TScale",background='white')
+  
+  slider = ttk.Scale(root,from_=0,to=220,orient='horizontal',style='TScale',
+                     command=slider_changed,variable=current_value)
+  slider.place(x=80,y=250)
   ```
 - Slider 2
   ``` python
   def get_current_value2():
     return "{: .2f}".format(current_value2.get())
 
-def slider_changed2(event=None):
+  def slider_changed2(event=None):
     Weight.set(get_current_value2())
 
     size = int(float(get_current_value()))
@@ -83,11 +83,11 @@ def slider_changed2(event=None):
 
   ``` python
   style2 = ttk.Style()
-style2.configure("TScale",background='white')
-
-slider2 = ttk.Scale(root,from_=0,to=200,orient='horizontal',style='TScale',
-                   command=slider_changed2,variable=current_value2)
-slider2.place(x=300,y=250)
+  style2.configure("TScale",background='white')
+  
+  slider2 = ttk.Scale(root,from_=0,to=200,orient='horizontal',style='TScale',
+                     command=slider_changed2,variable=current_value2)
+  slider2.place(x=300,y=250)
   ```
 - Add the formula to calculate the BMI of the person defining the function BMI
   ``` python
@@ -115,22 +115,22 @@ slider2.place(x=300,y=250)
 - Adding entry widget to enter the valuse of height and weight of the person
 
   ``` python
-  Height = StringVar()
-Weight = StringVar()
+    Height = StringVar()
+  Weight = StringVar()
+  
+  Label(root, text="Height (cm)", font='ariel 12', bg='white', fg='black').place(x=35, y=110)
+  Label(root, text="Weight (kg)", font='ariel 12', bg='white', fg='black').place(x=255, y=110)
+  
+  
+  
+  height = Entry(root,textvariable=Height,width=5,font='ariel 50',bg="#fff",fg="#000",bd=0,justify=CENTER)
+  height.place(x=35,y=160)
+  Height.set(get_current_value())
+  weight = Entry(root,textvariable=Weight,width=5,font='ariel 50',bg="#fff",fg="#000",bd=0,justify=CENTER)
+  weight.place(x=255,y=160)
+  Weight.set(get_current_value2())
 
-Label(root, text="Height (cm)", font='ariel 12', bg='white', fg='black').place(x=35, y=110)
-Label(root, text="Weight (kg)", font='ariel 12', bg='white', fg='black').place(x=255, y=110)
-
-
-
-height = Entry(root,textvariable=Height,width=5,font='ariel 50',bg="#fff",fg="#000",bd=0,justify=CENTER)
-height.place(x=35,y=160)
-Height.set(get_current_value())
-weight = Entry(root,textvariable=Weight,width=5,font='ariel 50',bg="#fff",fg="#000",bd=0,justify=CENTER)
-weight.place(x=255,y=160)
-Weight.set(get_current_value2())
-
-```
+  ```
 
 - Adding the image of the man is optional (for me some how it is not working)
 
@@ -141,15 +141,15 @@ second_image = Label(root,bg="lightblue")
   ``` python
   Button(root,text="View Report",width=15,height=2,font='ariel 10 bold',bg="#1f6e68",fg='white',command=BMI).place(x=280,y=340)
 
-label1 = Label(root,font="ariel 40 bold",bg='lightblue',fg='black')
-label1.place(x=115,y=330)
-
-label2 = Label(root,font="ariel 20 bold",bg='lightblue',fg='black')
-label2.place(x=280,y=405)
-
-label3 = Label(root,font="ariel 10 bold",bg='lightblue',fg='black',justify=LEFT)
-label3.place(x=200,y=450)
-```
+  label1 = Label(root,font="ariel 40 bold",bg='lightblue',fg='black')
+  label1.place(x=115,y=330)
+  
+  label2 = Label(root,font="ariel 20 bold",bg='lightblue',fg='black')
+  label2.place(x=280,y=405)
+  
+  label3 = Label(root,font="ariel 10 bold",bg='lightblue',fg='black',justify=LEFT)
+  label3.place(x=200,y=450)
+  ```
 
 ## There you are you have crreated you BMI app using tkinker.
 
