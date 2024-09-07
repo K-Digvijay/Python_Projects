@@ -79,7 +79,7 @@ Note : root.mainloop() will remain at the last for looping your code
     second_image.place(x=70,y=550-size)
     second_image.image=photo2
   ```
--now styling the app 
+- now styling the app 
 
   ``` python
   style2 = ttk.Style()
@@ -151,7 +151,7 @@ second_image = Label(root,bg="lightblue")
   label3.place(x=200,y=450)
   ```
 
-## There you are you have crreated you BMI app using tkinker.
+## There you are you have created you BMI app using tkinker.
 
 # Thank you
 
