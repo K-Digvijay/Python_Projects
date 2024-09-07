@@ -25,7 +25,7 @@ scale = PhotoImage(file=r"D:\TinkerForm\BMI calculator\scale.png")
 Label(root,image=scale,bg="lightblue").place(x=20,y=310)
 
 
-#slider
+#slider 1
 current_value  =DoubleVar()
 
 def get_current_value():
@@ -43,7 +43,7 @@ slider.place(x=80,y=250)
 
 
 
-#slider
+#slider 2
 current_value2  =DoubleVar()
 
 def get_current_value2():
