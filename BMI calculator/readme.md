@@ -115,7 +115,7 @@ Note : root.mainloop() will remain at the last for looping your code
 - Adding entry widget to enter the valuse of height and weight of the person
 
   ``` python
-    Height = StringVar()
+  Height = StringVar()
   Weight = StringVar()
   
   Label(root, text="Height (cm)", font='ariel 12', bg='white', fg='black').place(x=35, y=110)
