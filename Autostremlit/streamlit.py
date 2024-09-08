@@ -55,6 +55,7 @@ if choice == "ML":
         feature_importances = pd.DataFrame(model.feature_importances_, index=X.columns, columns=['Importance']).sort_values('Importance', ascending=False)
 
 if choice == 'download':
-    pass
+    with open('best_model.pkl', 'rb') as f: 
+    st.download_button('Download Model', f, file_name="best_model.pkl")
 
 
