@@ -158,4 +158,4 @@ second_image = Label(root,bg="lightblue")
 ### The output of the app is shown below
 <img align ="center" alt ="Coding" width = "400" src="https://github.com/K-Digvijay/Python_Projects/blob/master/BMI%20calculator/ScreenshotBMI.png">
 
-
+source:Parvat Computer Technology
