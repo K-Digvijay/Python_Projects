@@ -1,0 +1,4 @@
+hello welcomethis is the new file which i write using the python terminal
+thsi is new line
+thsi is the new data that i have added
+this is test data
