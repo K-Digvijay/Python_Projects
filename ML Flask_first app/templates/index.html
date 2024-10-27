@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Machine Learning API
+        </title>
+    </head>
+    <body>
+        <div class="login">
+            <h1>Predict Salary Analysis</h1>
+            <form action="{{url_for('predict')}}"method='post'>
+                <input type="text" name="Experience" placeholder="Experience" required = 'required'/>
+                <input type="text" name="test_score" placeholder="test_score" required = 'required'/>
+                <input type="text" name="interview_score" placeholder="interview_score" required = 'required'/>
+                <button type="Submit">Predict Salary</button>
+
+            </form>
+            <br>
+            <div>
+                <h2>{{prediction_text}}</h2>
+                
+            </div>
+        </div>
+    </body>
+</html>
