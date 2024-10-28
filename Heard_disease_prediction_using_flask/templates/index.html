@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
+        <title>
+            Heart Disease Prediction Peercent
+        </title>
+    </head>
+    <body style="background:#000 ;">
+        <div class="login">
+        <h1 style="color: chartreuse;">Heart Disease Prediction</h1>
+        <form action="{{url_for('predict')}}"method='post'>
+            <input type="text" name="Percentage Biking" placeholder="Percentage Population Biking %" required="'required"/><br>
+            <input type="text" name="Percentage Smoking" placeholder="Percentage Population Smoking %" required />
+            <p>
+            <button type="submit" class="button">Predict Percentage Population with heart Disease</button>
+            </p>
+
+        </form>
+
+        <br>
+        <br>
+        <h4 style="color: red;">
+            {{prediction_text}}
+        </h4>
+        </div>
+    </body>
+</html>
