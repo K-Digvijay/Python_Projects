@@ -1,4 +1,14 @@
 <!DOCTYPE html>
 <html>
-    
+    <body>
+        <form action="/predict" method="POST">
+            sepel length: <input type="'text" name="sepal_length"><br>
+            sepel width: <input type="'text" name="sepal_width"><br>
+            petel length: <input type="'text" name="petal_length"><br>
+            petel width: <input type="'text" name="petal_width"><br>
+
+            class: {{result}} <br>
+            <input type="Submit" value="Predict">
+        </form>
+    </body>
 </html>
